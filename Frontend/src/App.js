@@ -137,16 +137,18 @@ const App = () => {
           </h1>
         </header>
         <main>
-          <section className="sunburst-chart">
+          <section className="sunburst-chart mt-3">
             <h1 className="text-success">Sunburst Chart</h1>
+            <div className="d-flex justify-content-center mt-3">
               <SunburstChart data={sunburstData} width={400} height={400} />
+            </div>
           </section>
-          <section className="form">
+          <section className="form  mt-3">
             <UserForm/>
           </section>
-          <section className="userdataTable">
+          <section className="userdataTable  mt-3">
           <h1 className="text-success">User Data</h1>
-          <Table striped bordered hover>
+          <Table striped bordered hover className="mt-3">
             <thead>
               <tr>
                 <th>Name</th>

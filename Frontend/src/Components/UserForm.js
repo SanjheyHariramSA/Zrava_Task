@@ -42,7 +42,7 @@ function UserForm() {
   return (
     <div>
       <h1 className="text-success">Add User</h1>
-      <section className="form">
+      <section className="form mt-3">
         <Form onSubmit={handleSubmit}>
           <Container>
             <Row>
