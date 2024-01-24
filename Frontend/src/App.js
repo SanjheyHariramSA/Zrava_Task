@@ -72,7 +72,7 @@ const SunburstChart = ({ data, width, height }) => {
       });
     });
 
-  svg.append("text").attr("text-anchor", "middle").attr("font-size", 18).text("Sunburst Chart");
+  svg.append("text").attr("text-anchor", "middle").attr("font-size", 10).text("Sunburst Chart");
 };
 
   return <div id="sunburst-chart"></div>;
@@ -118,11 +118,14 @@ const App = () => {
   const sunburstData = {
     name: "root",
     children: userData.map((user) => ({
-      name: user.userName,
+      name: user.country, // Assigning color based on the country
       children: [
-        { name: `District: ${user.district}` , size: 1},
-        { name: `State: ${user.state}`, size: 1},
-        { name: `Country: ${user.country}`, size: 1},
+        {
+          name: user.state,
+          children: [
+            { name: user.district, children: [{ name: user.userName, size: 1 }] },
+          ],
+        },
       ],
     })),
   };
